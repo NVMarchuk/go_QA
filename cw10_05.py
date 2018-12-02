@@ -25,6 +25,7 @@ news_content = (By.XPATH, "//div[contains(@class,'ow_newsfeed_content')]")
 
 def open_main_page():
     wd.get(base_url)
+    wd.maximize_window()
     expected_title = "Oxwall - Find New Friends Here!"
     #assert expected_title in wd.title
 
@@ -40,11 +41,11 @@ def open_signin_page():
 def type_signin_kreds():
     element = wd.find_element(*signin_name_field)
     element.clear()
-    element.send_keys("admin")
+    element.send_keys("demo")
 
     element = wd.find_element(*signin_password_field)
     element.clear()
-    element.send_keys("Adm1n")
+    element.send_keys("demo")
 
     element = wd.find_element(*signin_remember_checkbox)
     if element.get_attribute("checked"):
